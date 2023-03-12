@@ -1,3 +1,7 @@
+git add README.md
+git commit -m "Fixed code block for typing animation"
+git push origin main
+
 ```html
 <!DOCTYPE html>
 <html>
