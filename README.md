@@ -30,4 +30,3 @@
 </body>
 </html>
 ```
-![image](https://user-images.githubusercontent.com/67452715/224528167-74c36894-ed03-42b7-b832-0b7f3effc6e5.png)
