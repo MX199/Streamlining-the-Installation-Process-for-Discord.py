@@ -1,32 +1,22 @@
-# Import the subprocess module to run commands in the terminal
-import subprocess
+# Import pip as a library to install packages
+import pip
+# Import discord.py if installed, otherwise install it and test it
+try:
+    import discord
+except ImportError:
+    print("Discord.py is not installed")
+    # Install discord.py using pip as a library
+    result = pip.main(["install", "discord.py"])
+    # Check if the installation was successful
+    print(f"Installation {'successful' if result == 0 else 'failed'}")
+else:
+    print("Discord.py is installed")
 
-
-# Define a function to install discord.py using pip
-def install_discord_py():
-    # Run the command "pip install discord.py" in the terminal and store the output and error
-    output, error = subprocess.Popen(["pip", "install", "discord.py"], stdout=subprocess.PIPE,
-                                     stderr=subprocess.PIPE).communicate()
-
-    # Check if there is any error
-    if error:
-        # Print the error message
-        print(f"An error occurred during installation: {error.decode()}")
-    else:
-        # Print the output message
-        print(f"Installation successful: {output.decode()}")
-
-
-# Define a function to test if discord.py is working
+# Test if discord.py is working by printing a message
 def test_discord_py():
-    # Try to import discord.py and catch any exception
-    try:
-        import discord
-        print("Discord.py is working")
-    except Exception as e:
-        print(f"Discord.py is not working: {e}")
-
-
-# Call the functions to install and test discord.py
-install_discord_py()
+    """
+    Test if discord.py is working by printing a message
+    """
+    print("Discord.py is working")
+# Test discord.py regardless of the outcome of importing it
 test_discord_py()
